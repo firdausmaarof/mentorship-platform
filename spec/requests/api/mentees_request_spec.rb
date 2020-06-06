@@ -2,17 +2,16 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Mentees', type: :request do
+RSpec.describe 'Api::Mentees', type: :request do
   let(:mentee) { build(:mentee) }
   let(:headers) { valid_headers.except('Authorization') }
   let(:valid_attributes) do
     attributes_for(:mentee, password_confirmation: mentee.password)
   end
 
-  # User signup test suite
-  describe 'POST /signup' do
+  describe 'POST /api/signup' do
     context 'when valid request' do
-      before { post '/signup', params: valid_attributes.to_json, headers: headers }
+      before { post '/api/signup', params: valid_attributes.to_json, headers: headers }
 
       it 'creates a new mentee' do
         expect(response).to have_http_status(201)
@@ -28,7 +27,7 @@ RSpec.describe 'Mentees', type: :request do
     end
 
     context 'when invalid request' do
-      before { post '/signup', params: {}, headers: headers }
+      before { post '/api/signup', params: {}, headers: headers }
 
       it 'does not create a new mentee' do
         expect(response).to have_http_status(422)

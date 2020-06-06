@@ -2,10 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe ApplicationController, type: :controller do
-  # create test mentee
+RSpec.describe Api::ApplicationController, type: :controller do
   let!(:mentee) { create(:mentee) }
-  # set headers for authorization
   let(:headers) { { 'Authorization' => token_generator(mentee.id) } }
   let(:invalid_headers) { { 'Authorization' => nil } }
 
@@ -13,7 +11,6 @@ RSpec.describe ApplicationController, type: :controller do
     context 'when auth token is passed' do
       before { allow(request).to receive(:headers).and_return(headers) }
 
-      # private method authorize_request returns current mentee
       it 'sets the current mentee' do
         expect(subject.instance_eval { authorize_request }).to eq(mentee)
       end

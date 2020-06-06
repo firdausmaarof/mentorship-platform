@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe AuthorizeApiRequest do
+RSpec.describe Api::AuthorizeApiRequest do
   let(:mentee) { create(:mentee) }
   let(:header) { { 'Authorization' => token_generator(mentee.id) } }
   subject(:invalid_request_obj) { described_class.new({}) }
