@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Api
-  class AuthenticationController < ApplicationController
+  class AuthenticationController < Api::ApplicationController
     skip_before_action :authorize_request, only: :authenticate
 
     def authenticate

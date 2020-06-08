@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     post 'auth/login', to: 'authentication#authenticate'
     post 'signup', to: 'mentees#create'
     get 'mentees', to: 'mentees#index'
+    get 'profile', to: 'mentees#show'
+    resources :mentors, only: %i[index show]
   end
 
   namespace :mapi do
