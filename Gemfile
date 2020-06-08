@@ -27,10 +27,20 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+gem 'jwt'
+gem 'rack-cors'
+gem 'rollbar'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails', '~> 1.5', require: false
+  gem 'capistrano-rvm'
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'rspec-rails', '~> 4.0.0'
 end
 
