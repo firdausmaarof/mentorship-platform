@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'mentees', to: 'mentees#index'
     get 'profile', to: 'mentees#show'
     resources :mentors, only: %i[index show]
+    resources :sessions, except: [:delete]
   end
 
   namespace :mapi do
