@@ -6,7 +6,7 @@ module Api
     def create
       mentee = Mentee.create!(mentee_params)
       auth_token = Api::AuthenticateUser.new(mentee.email, mentee.password).call
-      response = { message: Message.account_created, auth_token: auth_token }
+      response = { message: Message.account_created, auth_token: auth_token, mentee: mentee }
       json_response(response, :created)
     end
 

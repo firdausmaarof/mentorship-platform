@@ -7,7 +7,7 @@ module Mapi
     def create
       mentor = Mentor.create!(mentor_params)
       auth_token = Mapi::AuthenticateMentor.new(mentor.email, mentor.password).call
-      response = { message: Message.account_created, auth_token: auth_token }
+      response = { message: Message.account_created, auth_token: auth_token, mentor: mentor }
       json_response(response, :created)
     end
 
@@ -23,7 +23,8 @@ module Mapi
         :name,
         :email,
         :password,
-        :password_confirmation
+        :password_confirmation,
+        :about
       )
     end
   end
