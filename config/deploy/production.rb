@@ -5,8 +5,8 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server '54.169.236.100', user: 'ubuntu', roles: %w[app db web], my_property: :my_value
-server '54.169.236.100', user: 'ubuntu', roles: %w[app web], other_property: :other_value
+server '54.169.236.100', user: 'ubuntu', roles: %w[app db web]
+server '54.169.236.100', user: 'ubuntu', roles: %w[app web]
 server '54.169.236.100', user: 'ubuntu', roles: %w[db]
 
 # role-based syntax
@@ -56,5 +56,4 @@ server '54.169.236.100', user: 'ubuntu', roles: %w[db]
 #     # password: "please use keys"
 #   }
 
-set :branch, 'rails-api'
 set :deploy_to, "/home/ubuntu/app/#{fetch :application}"
