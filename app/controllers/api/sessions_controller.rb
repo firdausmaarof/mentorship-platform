@@ -5,7 +5,7 @@ module Api
     before_action :set_session, only: %i[show update destroy]
 
     def index
-      @sessions = current_mentee.sessions
+      @sessions = current_mentee.sessions.order(:date)
       json_response(@sessions)
     end
 
