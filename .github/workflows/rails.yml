@@ -61,3 +61,8 @@ jobs:
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: rspec
+      - name: Deploy
+        uses: miloserdow/capistrano-deploy@v2.1
+        with:
+          target: production
+          deploy_key: ${{ secrets.DEPLOY_ENC_KEY }}
