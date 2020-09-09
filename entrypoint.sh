@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-echo "Precompile assets"
-bin/rails assets:precompile
-
 echo "Migrating database..."
 bin/rails db:migrate
 
