@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'profile', to: 'mentees#show'
     resources :mentors, only: %i[index show]
     resources :sessions, except: [:delete]
+    get 'health', to: 'health#show'
   end
 
   namespace :mapi do
