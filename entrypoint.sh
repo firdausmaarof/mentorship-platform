@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-echo "Creating database if it's not present..."
-bin/rails db:create
+echo "Precompile assets"
+bundle exec rake assets:precompile
 
 echo "Migrating database..."
 bin/rails db:migrate
