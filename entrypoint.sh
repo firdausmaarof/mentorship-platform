@@ -2,7 +2,7 @@
 set -e
 
 echo "Precompile assets"
-bundle exec rake assets:precompile
+bin/rails assets:precompile
 
 echo "Migrating database..."
 bin/rails db:migrate
