@@ -15,6 +15,9 @@
 # gem 'pg'
 #
 default: &default
+  host: <%= ENV["POSTGRES_HOST"] %>
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
@@ -24,6 +27,7 @@ default: &default
 development:
   <<: *default
   database: mentorship_platform_development
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -76,5 +80,3 @@ test:
 production:
   <<: *default
   database: mentorship_platform_production
-  username: postgres
-  password: <%= ENV['MENTORSHIP_PLATFORM_DATABASE_PASSWORD'] %>
