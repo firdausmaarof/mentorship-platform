@@ -29,7 +29,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'jwt'
+gem 'lograge'
 gem 'rack-cors'
+gem 'remote_syslog_logger'
 gem 'rollbar'
 
 group :development, :test do
