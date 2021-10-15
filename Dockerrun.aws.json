@@ -7,7 +7,7 @@
       "image": "397392172220.dkr.ecr.ap-southeast-1.amazonaws.com/mentorship-platform:latest",
       "environment": [],
       "essential": true,
-      "memoryReservation": 256,
+      "memoryReservation": 128,
       "mountPoints": [],
       "portMappings": [
         {
